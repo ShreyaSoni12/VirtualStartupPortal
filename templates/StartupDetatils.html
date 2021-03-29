@@ -1,0 +1,36 @@
+
+{% extends 'layout.html' %}
+{% block title %}Create{% endblock %}
+{% block content %}
+<div class="row">
+	
+	<div style="width: 60%; margin: 25px auto">
+	    <h3 style="color:blue">Create New Virtual Startup</h3>
+        <form action="{{ url_for('stcreate2') }}" method="POST">
+
+			
+			<div class="form-group">
+                <label class="control-lable " style="font-size: 20px">Mention the title of your idea.</label>
+               <textarea class="form-control" id="title" rows="2"></textarea>
+			</div>
+			<div class="form-group">
+                <label class="control-label" style="font-size: 20px">Describe current pain areas that you are planning</label>
+				<textarea class="form-control" id="painarea" rows="4"></textarea>
+			</div>
+			<div class="form-group">
+                <label class="control-lable " style="font-size: 20px">If you have alreday thought about the solution then please describe it(optional).</label>
+				<textarea class="form-control" id="painarea" rows="4"></textarea>
+			</div>
+            
+			<div class="form-group">
+                <button class="btn btn-primary btn-lg   pull-right">next</button>
+			</div>	
+		</form>
+
+		
+	</div>
+</div>
+
+
+
+{% endblock %}

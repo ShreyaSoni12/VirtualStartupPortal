@@ -1,5 +1,5 @@
 body{
-background-image: url("pic/pic.png");
+    background-image: url("/static/images/pic.png");
 background-size: cover;
 width: 100%;
 height: auto;
