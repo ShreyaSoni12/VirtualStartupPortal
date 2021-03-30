@@ -23,15 +23,10 @@ def login():
     return render_template('login.html')
 @app.route("/register")
 def register():
-    return render_template('Resitrations.html')
+    return render_template('Resitration.html')
 
 
 
 if __name__ == "__main__":
     app.run(host = '0.0.0.0',  port= 80,debug='true')
 
-@app.route("/create2")
-def stcreate2():
-    industry=['Health Care','Retail','Logistics','Agriculture','Aviation','Automobiles']
-    projectN =['Software Heavy','Civil Heavy','Pure Mehnical','Mechatronics','IOT & Automation','Chemical Heavy'] 
-    return render_template('create2.html',industry=industry,project=projectN)
