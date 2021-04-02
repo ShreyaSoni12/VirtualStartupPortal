@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" type="text/css" href="home.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -13,16 +13,16 @@
 		<div class = "content-body">
 			<marquee behavior="scroll" direction="right"><h1>Welcome to StartUp Portal</h1></marquee>
 			<br><br>
-			<h2><i>I would like to look into my virtual startup</i></h2>
-				<form action="{{url_for('stlist')}}" method="get">
+			<h2><i>I would like to contribute to my Startup</i></h2>
+				<form action="" method="get">
 					
 						<button type="submit" class="btn btn-primary"> GO &rarr; </button>
 				</form>
 
 				<br><br>
 				<h3> OR </h3><br><br>
-			<h2><i>Create new virtual startup</i></h2>
-					<form action="{{url_for('stcreate')}}" method="get">
+			<h2><i>I would like to apply to a Virtual Startup</i></h2>
+					<form action="" method="get">
 							<button type="submit" class="btn btn-primary"> GO &rarr; </button>
 					</form>		
 		</div>

@@ -4,7 +4,7 @@
 <div class="row">
 	<h1 style="text-align: center">I am an Existing User</h1>
 	<div style="width: 30%; margin: 25px auto">
-		<form action="{{ url_for('login') }}" method="POST">
+		<form action="/login" method="POST">
 			
             <div class="form-group">
 				<lable class="control-lable " style="font-size: 20px">Email</lable>
@@ -23,11 +23,9 @@
 		</form>
 	
         <div>
-            <h4 style="text-align: center; font-size: 20px">I am new user <a href="/register">Cretae Account</a>  &rarr;</h4>
+            <h4 style="text-align: center; font-size: 20px">I am new user <a href="/signup">Cretae Account</a>  &rarr;</h4>
         </div>
 		
 	</div>
-    
 </div>
-
 {% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'layout.html' %}
+{% block title %}Registration{% endblock %}
+{% block content %}
+	
+<div class="container">
+<div class="row">
+	
+	<div style="width: 50%; margin: 25px auto">
+	    <h3 style="color: blue">Create Account</h3>
+               <div class="config" style="margin: 10%;">
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio" >About You
+                    </label>
+                    
+                
+                    <label class="radio-inline pull-right">
+                      <input type="radio" name="optradio" checked>Qualification
+                    </label>
+                </div>
+    <form action="/">
+                <div class="row">
+                    <div class="form-group">
+                            <label class="control-label" >Education Course</label><br>
+                            <div class="dropdown">
+                                <select class="form-control" name ="course" id= "course">
+                                    <option value="Select Course">Select Course</option>
+                                    <option value="ug">B.E/B.Tech</option>
+                                    <option value="ug">M.E/M.Tech</option>
+                                    <option value="ug">Diploma</option>
+                                </select>
+                            </div>
+
+                            <label class="contol-label">Education Stream</label><br>
+                            <div class="dropdown">
+                                <select class="form-control" name ="stream" id= "stream" >
+                                    <option value="Select Stream">Select Stream</option>
+                                    <option value="CSE">Computer Science & engg</option>
+                                    <option value="ISE">Information Science & engg</option>
+                                    <option value="ECE">Electronic engg</option>
+                                    <option value="EEE">Electrical engg</option>
+                                    <option value="MCE">Mechanical engg</option>
+                                </select>
+                            </div>
+                            <label class="contol-label">Semester</label><br>
+                                <div class="dropdown">
+                                    <select class="form-control" name ="sem" id= "sem" >
+                                        <option value="Select Stream">Select Semester</option>
+                                        <option value="I">First</option>
+                                        <option value="II">Second</option>
+                                        <option value="III">Third</option>
+                                        <option value="IV">Fourth</option>
+                                        <option value="V">Fifth</option>
+                                        <option value="VI">Sixth</option>
+                                        <option value="VII">Seventh</option>
+                                        <option value="VIII">Eighth</option>
+                                    </select>
+                            </div>
+                            <label class="contol-label">College</label><br>
+                            <textarea class="form-control" rows="2" placeholder="College Name"></textarea><br>
+                            <label class="contol-label">Skills</label><br>
+                            <textarea class="form-control" rows="3" placeholder="Mention Your Skills"></textarea><br>
+                            <label class="contol-label">State</label>
+                                <div class="dropdown">
+                                        <select class="form-control" name ="state" id= "state">
+                                            <option value="Select State">Current State</option>
+                                            <option value="bih">Bihar</option>
+                                            <option value="kar">Karnataka</option>
+                                            <option value="mah">Maharastra</option>
+                                            <option value="up">Uttar Pradesh</option>
+                                            <option value="mp">Madhya Pradesh</option>
+                                            <option value="wb">West Bengal</option>
+                                            <option value="raj">Rajasthan</option>
+                                            <option value="dlh">Delhi</option>
+                                        </select>
+                                </div>
+                            <label class="contol-label">City</label>
+                                <div class="dropdown">
+                                        <select class="form-control" name ="city" id= "city" >
+                                            <option value="Select City">Current State</option>
+                                            <option value="pat">Patna</option>
+                                            <option value="bngl">Banglore</option>
+                                            <option value="mum">Mumbai</option>
+                                            <option value="luck">Lucknow</option>
+                                            <option value="bhp">Bhopal</option>
+                                            <option value="kol">Kolkata</option>
+                                            <option value="jai">Jaipur</option>
+                                            <option value="dlh">Delhi</option>
+                                        </select>
+                                </div>
+                                <form action="#">
+                                <label class="contol-label">Resume(Optional)</label><br>
+                                <input type="file" id="Resume(Optional" name="Resume Optional">
+                                </form>
+
+                    </div>
+
+                </div>		
+                <div class="form-group row">
+                    <div class="col-sm-3" >
+                
+                        <a href="/signup"> Prevous Step </a>
+                     
+                    </div> 
+                    <div class="col-sm-2 pull-right">
+                        <button class="btn btn-primary btn-lg   pull-right">Submit</button>    
+                    </div>
+
+			     </div>
+            </form>	
+
+		
+	</div>
+</div>
+</div>
+
+
+{% endblock %}
