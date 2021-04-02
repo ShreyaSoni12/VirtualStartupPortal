@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration</title>
+	<link rel="stylesheet" type="text/css" href="static/registration.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Create Account</h1>
+		<br>
+		<form action="#">
+			<div class="row">
+				<div class="form-group">
+						<label>Education Course</label><br>
+						<div class="dropdown">
+							<select name ="course" id= "course" style="width: 500px; height: 40px;">
+								<option value="Select Course">Select Course</option>
+								<option value="ug">B.E/B.Tech</option>
+								<option value="ug">M.E/M.Tech</option>
+								<option value="ug">Diploma</option>
+							</select>
+						</div>
+				
+						<label>Education Stream</label><br>
+						<div class="dropdown">
+							<select name ="stream" id= "stream" style="width: 500px; height: 40px;">
+								<option value="Select Stream">Select Stream</option>
+								<option value="CSE">Computer Science & engg</option>
+								<option value="ISE">Information Science & engg</option>
+								<option value="ECE">Electronic engg</option>
+								<option value="EEE">Electrical engg</option>
+								<option value="MCE">Mechanical engg</option>
+							</select>
+						</div>
+						<label>Semester</label><br>
+							<div class="dropdown">
+								<select name ="sem" id= "sem" style="width: 500px; height: 40px;">
+									<option value="Select Stream">Select Semester</option>
+									<option value="I">First</option>
+									<option value="II">Second</option>
+									<option value="III">Third</option>
+									<option value="IV">Fourth</option>
+									<option value="V">Fifth</option>
+									<option value="VI">Sixth</option>
+									<option value="VII">Seventh</option>
+									<option value="VIII">Eighth</option>
+								</select>
+						</div>
+						<label>College</label><br>
+						<textarea cols="67" rows="2" placeholder="College Name"></textarea><br>
+						<label>Skills</label><br>
+						<textarea cols="67" rows="2" placeholder="Mention Your Skills"></textarea><br>
+						<label>State</label>
+							<div class="dropdown">
+									<select name ="state" id= "state" style="width: 500px; height: 40px;">
+										<option value="Select State">Current State</option>
+										<option value="bih">Bihar</option>
+										<option value="kar">Karnataka</option>
+										<option value="mah">Maharastra</option>
+										<option value="up">Uttar Pradesh</option>
+										<option value="mp">Madhya Pradesh</option>
+										<option value="wb">West Bengal</option>
+										<option value="raj">Rajasthan</option>
+										<option value="dlh">Delhi</option>
+									</select>
+							</div>
+						<label>City</label>
+							<div class="dropdown">
+									<select name ="city" id= "city" style="width: 500px; height: 40px;">
+										<option value="Select City">Current State</option>
+										<option value="pat">Patna</option>
+										<option value="bngl">Banglore</option>
+										<option value="mum">Mumbai</option>
+										<option value="luck">Lucknow</option>
+										<option value="bhp">Bhopal</option>
+										<option value="kol">Kolkata</option>
+										<option value="jai">Jaipur</option>
+										<option value="dlh">Delhi</option>
+									</select>
+							</div>
+							<form action="#">
+							<label>Resume(Optional)</label><br>
+							<input type="file" id="Resume(Optional" name="Resume Optional">
+							</form>
+					
+				</div>
+			
+			</div>		
+				<div class="button">	
+				<button type="submit" class="btn btn-success"> submit </button>
+				</div>
+				<div class="button1">	
+				<button type="submit" class="btn btn-success"> Previous &larr; </button>
+				</div>
+		</form>	
+	</div>
+</body>
+</html>

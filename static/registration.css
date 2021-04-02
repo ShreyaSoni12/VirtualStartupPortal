@@ -1,0 +1,26 @@
+
+.dropdown{
+	position: absolute;
+	min-width: 50px;
+	min-height: 50px;
+
+}
+.button{
+	text-align: right;
+	margin-right: 350px;
+
+}
+.button1{
+	text-align: left;
+	margin-left: 180px;
+	
+}
+.container .row{
+	margin-right: 200px;
+	margin-left:200px;
+	font-style: bold;
+}
+h1{
+	margin-right: 200px;
+	margin-left: 200px;
+}

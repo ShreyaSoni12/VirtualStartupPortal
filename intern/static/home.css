@@ -1,0 +1,15 @@
+body{
+    background-image: url("intern/static/images/pic.png");
+background-size: cover;
+width: 100%;
+height: auto;
+}
+.content-body{
+	text-align: center;
+	margin-top: 150px;
+	text-shadow: transparent;
+}
+.button{
+	text-align: center;
+	margin-top: 160px;
+}

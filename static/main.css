@@ -9,27 +9,109 @@
         background-color:#1B40E6 !important;
     }
 
-    label .control-label{
+    label.control-label{
     font-size: 20px !important;
     line-height: 20px !important;
     }
  
-        #footer {
-            position: absolute;
+#footer {
+    position: absolute;
            
-            bottom: 0;
-           
-            height: 40px;
+    bottom: 0;
+    left: 50%;
+    margin-right: -50%;
+    height: 40px;
+    transform: translate(-50%, -50%);
                    }
 #input{
     background: transparent;
-     border: none;
-  border-bottom: 1px solid #000000;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #000000;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+.StartupPage{
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    left:  15%;
+    top: 10%;
+
+    background: #FFFFFF;
+    box-shadow: 0px 2px 10px #7591B0;
+    border-radius: 8px;
+}
+p.StartupPage{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.3px;
+
+    color: #53585E;
 }
 
-	#hdtext {
+#hdtext {
 		color: 	#FFFFFF;
 	}
+#title{
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.4px;
+
+    color: #1B40E6;
+}
+#subtitle{
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.333333px;
+
+    color: #53585E;
+}
+.container2{
+    font-size: 18px;
+    height: 20em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    margin-top:4%;
+}
+
+.config{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+.flex-item{
+    width:20%;
+    height:auto;
+    margin: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #53585E;
+}
+/* .config > div {
+    margin: 10px;
+} */
+@media screen and (max-width:1200px){
+    .flex-item{
+        width:40%;
+    }
+} 
+
+@media screen and (max-width:600px){
+    .flex-item{
+        width:90%;
+    }
+} 

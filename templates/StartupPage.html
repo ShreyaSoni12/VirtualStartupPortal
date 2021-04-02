@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    
+
+        <div class="StartupPage" align="center">
+            <p>Startup 1 </p>
+            <p id="title">ABC Startup</p>
+            <p id="subtitle">Tell us which area would you like to look into? </p>
+            <div class="config">
+                <div class="flex-item">
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio" checked>Manage Project
+                    </label>
+                 </div>   
+                <div class="flex-item">
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio">Manage Email
+                    </label>
+                </div>
+                <div class="flex-item">
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio">Talk to Team 
+                    </label>
+                </div>
+            </div>
+            <div class="config">
+                <div class="flex-item">
+               
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio" checked>Hire a New Team Member
+                    </label>
+                </div>
+                <div class="flex-item">
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio">HR and Administration
+                    </label>
+                </div>
+                <div class="flex-item">
+                    <label class="radio-inline">
+                      <input type="radio" name="optradio">Setup 
+                    </label>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
