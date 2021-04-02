@@ -4,7 +4,7 @@
 <div class="row">
 	<h1 style="text-align: center">I am an Existing User</h1>
 	<div style="width: 30%; margin: 25px auto">
-		<form action="/login" method="POST">
+		<form action="{{ url_for('login') }}" method="POST">
 			
             <div class="form-group">
 				<lable class="control-lable " style="font-size: 20px">Email</lable>
