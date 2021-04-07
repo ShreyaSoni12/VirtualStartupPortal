@@ -1,6 +1,16 @@
 {% extends 'layout.html' %}
 {% block title %}Login{% endblock %}
 {% block content %}
+   {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+    {% endwith %}
 <div class="row">
 	<h1 style="text-align: center">I am an Existing User</h1>
 	<div style="width: 30%; margin: 25px auto">
