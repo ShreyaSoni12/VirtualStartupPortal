@@ -1,0 +1,168 @@
+{% extends 'layout.html' %}
+{% block title %}Startup{% endblock %}
+{% block content %}
+<div class="cont">
+    
+
+ <div class="StartupPage1" align="center">
+       
+	<h3 style="text-align: center; color: blue ">Search For Interns</h3>
+    
+       <div class="search">
+          <input type="text" class="searchTerm" placeholder="Search for intern">
+          <button id="AdvancedSearchBtn" type="submit" onclick="show()">
+            <img src="/static/images/AD search.png">
+         </button>
+         <button id="btn"  >search</button>
+       </div>
+       <div class="AdvancedSearch" id="AD">
+           <div class="Adsitem">
+               <h3 style="text-align: center; color: blue; font-size: 20px; ">Advanced Search</h3>
+               <button id="adsbtn">
+                   Clear All
+               </button>
+          
+           </div>
+           <div class="Adsitem">
+                <div class="subitem" align="left">
+                   <lable>Skill Required</lable>
+                    <input type="text" id="Adsinput" name="skill" value="Enter Key Words">
+               </div>
+           </div>
+           <div class="Adsitem">
+               <div class="subitem" align="left">
+                   <lable>Stream</lable>
+                   <select class="form-control" name ="course" id= "course">
+                            <option value="Select Course">Select Educational Course </option>
+                            <option value="ug">B.E/B.Tech</option>
+                            <option value="ug">M.E/M.Tech</option>
+                            <option value="ug">Diploma</option>
+                    </select>
+               </div>
+                <div class="subitem" align="left">
+                   <lable>Current Course</lable>
+                   <select class="form-control" name ="course" id= "course">
+                            <option value="Select Course">Select Qualification </option>
+                            <option value="ug">B.E/B.Tech</option>
+                            <option value="ug">M.E/M.Tech</option>
+                            <option value="ug">Diploma</option>
+                    </select>
+               </div>
+            </div>
+           <div class="Adsitem">
+               <lable>Semister</lable>
+               <div class="Semister">
+                   <div class="sem" name="sem">
+                       1
+                   </div>
+                   <div class="sem" name="sem">
+                       2
+                   </div>
+                   <div class="sem" name="sem">
+                       2
+                   </div>
+                   <div class="sem" name="sem">
+                       4
+                   </div>
+                   <div class="sem" name="sem">
+                       5
+                   </div>
+                   <div id="full">
+                     <div class="semf">
+                         Summer
+                     </div>
+                     <div class="semf">
+                           Winter
+                     </div>
+                   </div>
+               </div>
+           </div>
+            <div class="Adsitem">
+                <div class="subitem" align="left">
+                   <lable>College Name</lable>
+                    <input type="text" id="Adsinput" name="skill" value="Search by college">
+                </div>
+                <div class="subitem" align="left">
+                   <lable>Candidate</lable>
+                    <input type="text" id="Adsinput" name="skill" value="Search by name">
+                </div>
+           </div>
+           <div class="Adsitem">
+               <div class="subitem" align="left">
+               <lable>103 Candidates Found</lable>     
+               </div>
+              
+              <button id="adsbtn">CANCEL</button>
+               <button id="btn" >Done</button>
+               
+                
+           </div>
+           
+       </div>
+       <div style="padding-left:10px">
+          <h4 align="left">Suggested Candidates</h4>    
+       </div>
+       <div class="InternCard">
+           <div class="box" >
+               <h4>Yong Tonghyon</h4>
+               <h5>yong.tonghyon@gmail.com</h5>
+               <h5>B.E Computer</h5>
+               <lable>4th SEM</lable>
+               <h5 style="color: blue">COEP Pune</h5>
+           </div>
+           <div class="box" >
+               <h4>Yong Tonghyon</h4>
+               <h5>yong.tonghyon@gmail.com</h5>
+               <h5>B.E Computer</h5>
+               <lable>4th SEM</lable>
+               <h5 style="color: blue">COEP Pune</h5>
+           </div>
+           <div class="box" >
+               <h4>Yong Tonghyon</h4>
+               <h5>yong.tonghyon@gmail.com</h5>
+               <h5>B.E Computer</h5>
+               <lable>4th SEM</lable>
+               <h5 style="color: blue">COEP Pune</h5>
+           </div>
+           <div class="box" >
+               <h4>Yong Tonghyon</h4>
+               <h5>yong.tonghyon@gmail.com</h5>
+               <h5>B.E Computer</h5>
+               <lable>4th SEM</lable>
+               <h5 style="color: blue">COEP Pune</h5>
+           </div>
+           <div class="box" >
+               <h4>Yong Tonghyon</h4>
+               <h5>yong.tonghyon@gmail.com</h5>
+               <h5>B.E Computer</h5>
+               <lable>4th SEM</lable>
+               <h5 style="color: blue">COEP Pune</h5>
+           </div>
+           <div class="box" >
+               <h4>Yong Tonghyon</h4>
+               <h5>yong.tonghyon@gmail.com</h5>
+               <h5>B.E Computer</h5>
+               <lable>4th SEM</lable>
+               <h5 style="color: blue">COEP Pune</h5>
+           </div>
+           
+        </div>
+        
+    
+
+ </div>
+</div>
+<script type="text/javascript"> 
+    function show(){
+        var x = document.getElementById("AD")
+         if (x.style.display === "none") {
+                x.style.display = "block";
+                
+          } else {
+                x.style.display = "none";
+          }
+    }
+
+</script>
+
+{% endblock %}
