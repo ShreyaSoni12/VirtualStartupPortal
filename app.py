@@ -17,7 +17,6 @@ app.config['MYSQL_DB'] = 'vsp_db'
 mysql = MySQL(app)
 
 
-
 # ******************* Enterpreuner routes *************
 
 @app.route("/")
@@ -181,6 +180,18 @@ def startuppage(title):
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
+
+@app.route("/hire")
+def hire():
+    return render_template('Hire-new-team-membear.html')
+@app.route("/search")
+def search():
+    return render_template('search-for-intern.html')
+
+@app.route("/existingapplication")
+def application():
+    return render_template('existing-application.html')
+
 # ******************************* route for intern ******
 
 
@@ -203,7 +214,16 @@ def internSignup():
 #intern registration
 @app.route("/signup1",methods=['GET','POST'])
 def internSignup2():
-    return render_template('Intern-Signup-page2.html')
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM state_list')
+        # Fetch one record and return result
+    account = cursor.fetchall()
+# t in account:
+#         state.append(st[])
+#     print(state[1])    state = []
+#     for s
+    
+    return render_template('Intern-Signup-page2.html',state=account)
 
 
 # intern dashboard

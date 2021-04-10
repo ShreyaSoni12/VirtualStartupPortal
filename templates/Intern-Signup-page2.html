@@ -30,7 +30,7 @@
                                 </select>
                             </div>
 
-                            <label class="contol-label">Education Stream</label><br>
+                            <label class="control-label">Education Stream</label><br>
                             <div class="dropdown">
                                 <select class="form-control" name ="stream" id= "stream" >
                                     <option value="Select Stream">Select Stream</option>
@@ -41,7 +41,7 @@
                                     <option value="MCE">Mechanical engg</option>
                                 </select>
                             </div>
-                            <label class="contol-label">Semester</label><br>
+                            <label class="control-label">Semester</label><br>
                                 <div class="dropdown">
                                     <select class="form-control" name ="sem" id= "sem" >
                                         <option value="Select Stream">Select Semester</option>
@@ -55,25 +55,21 @@
                                         <option value="VIII">Eighth</option>
                                     </select>
                             </div>
-                            <label class="contol-label">College</label><br>
+                            <label class="control-label">College</label><br>
                             <textarea class="form-control" rows="2" placeholder="College Name"></textarea><br>
-                            <label class="contol-label">Skills</label><br>
+                            <label class="control-label">Skills</label><br>
                             <textarea class="form-control" rows="3" placeholder="Mention Your Skills"></textarea><br>
-                            <label class="contol-label">State</label>
+                            <label class="control-label">State</label>
                                 <div class="dropdown">
                                         <select class="form-control" name ="state" id= "state">
                                             <option value="Select State">Current State</option>
-                                            <option value="bih">Bihar</option>
-                                            <option value="kar">Karnataka</option>
-                                            <option value="mah">Maharastra</option>
-                                            <option value="up">Uttar Pradesh</option>
-                                            <option value="mp">Madhya Pradesh</option>
-                                            <option value="wb">West Bengal</option>
-                                            <option value="raj">Rajasthan</option>
-                                            <option value="dlh">Delhi</option>
+                                            {% for st in state %}
+                                            <option >{{st['state']}}</option>
+                                        
+                                            {% endfor %}
                                         </select>
                                 </div>
-                            <label class="contol-label">City</label>
+                            <label class="control-label">City</label>
                                 <div class="dropdown">
                                         <select class="form-control" name ="city" id= "city" >
                                             <option value="Select City">Current State</option>
@@ -88,7 +84,7 @@
                                         </select>
                                 </div>
                                 <form action="#">
-                                <label class="contol-label">Resume(Optional)</label><br>
+                                <label class="control-label">Resume(Optional)</label><br>
                                 <input type="file" id="Resume(Optional" name="Resume Optional">
                                 </form>
 
