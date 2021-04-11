@@ -9,12 +9,12 @@
 	    <h3 style="color: blue">Create Account</h3>
                <div class="config" style="margin: 10%;">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio" >About You
+                      <input type="radio" name="optradio" disabled>About You
                     </label>
                     
                 
                     <label class="radio-inline pull-right">
-                      <input type="radio" name="optradio" checked>Qualification
+                      <input type="radio" name="optradio" checked >Qualification
                     </label>
                 </div>
     <form action="/">
@@ -64,7 +64,7 @@
                                         <select class="form-control" name ="state" id= "state">
                                             <option value="Select State">Current State</option>
                                             {% for st in state %}
-                                            <option >{{st['state']}}</option>
+                                            <option >{{st[1]}}</option>
                                         
                                             {% endfor %}
                                         </select>

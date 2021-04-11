@@ -1,26 +1,27 @@
 from flask import Flask , render_template, request, redirect, url_for, session,flash
 app = Flask(__name__)
-from flask_mysqldb import MySQL
-import MySQLdb.cursors
+import psycopg2
+import psycopg2.extras
+
 
 from datetime import datetime
 now = datetime.now()
  # secret_key for session
 app.secret_key = 'hello'
 
-# Database conectivity
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'sadik'      #use your databse username
-app.config['MYSQL_PASSWORD'] = 'admin'    #use your databse password
-app.config['MYSQL_DB'] = 'vsp_db'
 
-mysql = MySQL(app)
+conn = psycopg2.connect(dbname='vsp_db',
+                user='sadik',
+                password='admin',
+                host='localhost')
+
 
 
 # ******************* Enterpreuner routes *************
 
 @app.route("/")
 def landing():
+    print(session)
     return render_template('home.html')
 
 @app.route("/dash", methods=['GET'])
@@ -28,12 +29,13 @@ def landing():
 def stlist():
     if 'loggedin' in session:
         founder_id=session['id']
-        cursor = mysql.connection.cursor()
+        cursor = conn.cursor()
         try:
             
-            q4= "SELECT * FROM virtualstartup WHERE founder_id = '%d' " % (founder_id)
+            q4= '''SELECT * FROM "virtualstartup" WHERE founder_id = %s ''' % (founder_id)
             cursor.execute(q4)
             startup=cursor.fetchall()
+            cursor.close()
         except:
             print("error")
         st_list = []
@@ -77,14 +79,20 @@ def stcreate2(name):
             skil = request.form['skill']
             tech = request.form['tech']
             # print(session,"sadik")
-            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            q1 = "insert into virtualstartup(founder_id,vs_name,vs_pain_areas,vs_solution,vs_industry,vs_project_nature,vs_skills_required,vs_technologies,last_updated,updatedby_id) values('%d','%s','%s','%s','%s','%s','%s','%s','%s','%d')" % (session['id'],session['vs_name'], session['vs_pain'],session['vs_sol'],Industry,projectN,skil,tech,formatted_date,session['id'])
+            cursor = conn.cursor()
+            q1 = '''insert into virtualstartup(founder_id,vs_name,vs_pain_areas,vs_solution,vs_industry,vs_project_nature,vs_skills_required,vs_technologies,last_updated,updatedby_id) values('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s')''' % (session['id'],session['vs_name'], session['vs_pain'],session['vs_sol'],Industry,projectN,skil,tech,formatted_date,session['id'])
             try:
                 
                 cursor.execute(q1)
-                mysql.connection.commit()
+                conn.commit()
+                cursor.close()
                 flash('You have successfully created!')
+                session.pop['vs_name',None]
+                session.pop['vs_pain',None]
+                session.pop['vs_sol',None]
+                
                 return redirect(url_for('stlist'))
+            
             except:
                 flash ("Something Wrong !")
                 return render_template('create2.html',industry=industry,project=projectN)
@@ -102,8 +110,8 @@ def login():
         password = request.form['password']
         print(password,email)
         # Check if account exists using MySQL
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM user WHERE emailid = %s AND password = md5(%s)', (email, password,))
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        cursor.execute('''SELECT * FROM "user" WHERE emailid = %s AND password = md5(%s)''', (email, password,))
         # Fetch one record and return result
         account = cursor.fetchone()
         print(account)
@@ -152,19 +160,21 @@ def register():
         role=1
         # print(FirstName,LastName,passw,EmailId,"Sadik")
         # Check if account exists using MySQL
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM user WHERE emailid = %s', (EmailId,))
+        cursor = conn.cursor()
+        cursor.execute('''SELECT * FROM "user" WHERE emailid = %s;''', (EmailId,))
         account = cursor.fetchone()
         # If account exists show error and validation checks
         if account:
-            msg = 'Account already exists!'
+            flash( 'Account already exists!')
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            q1 = "insert into user(role_id,name,emailid,password,Phone) values('%d','%s','%s',MD5('%s'),%s)" % (role,name,EmailId,passw,phone)
+            q1 = '''insert into "user"(role_id,name,emailid,password,phone) values(%s,%s,%s,MD5(%s),%s);''' 
             # q2 = "insert into founder values((select user_id from user where emailId='%s' ),'%s',(select user_id from user where emailId='%s' ))" % (EmailId, ) 
-            cursor.execute(q1)
-            mysql.connection.commit()
+            cursor.execute(q1,(role,name,EmailId,passw,phone))
+            conn.commit()
             flash( 'You have successfully registered!')
+            cursor.close()
+            conn.close()
     elif request.method == 'POST':
         # Form is empty... (no POST data)
         flash('Please fill out the form!')
@@ -214,10 +224,13 @@ def internSignup():
 #intern registration
 @app.route("/signup1",methods=['GET','POST'])
 def internSignup2():
-    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cursor.execute('SELECT * FROM state_list')
         # Fetch one record and return result
     account = cursor.fetchall()
+    print(account[0])
+    cursor.close()
+    
 # t in account:
 #         state.append(st[])
 #     print(state[1])    state = []
