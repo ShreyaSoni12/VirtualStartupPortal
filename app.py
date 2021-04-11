@@ -201,6 +201,10 @@ def search():
 @app.route("/existingapplication")
 def application():
     return render_template('existing-application.html')
+@app.route("/Info")
+def internInfo():
+    return render_template('intern-application.html')
+
 
 # ******************************* route for intern ******
 
