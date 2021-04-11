@@ -1,25 +1,35 @@
 {% extends 'layout.html' %}
 {% block title %}Create{% endblock %}
 {% block content %}
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+    {% endwith %}
 <div class="row">
-	
+	  
 	<div style="width: 50%; margin: 25px auto">
 	    <h3 style="color:blue">Create New Virtual Startup</h3>
-        <form action="/create" method="POST">
+        <form action="{{ url_for('stcreate2',name= session['vs_name']) }}" method="POST">
 
 			
 			<div class="form-group">
                 <label class="control-lable " style="font-size: 18px">Industry</label>
-                <select class="form-control ">
+                <select class="form-control" name="industry"> 
                   <option>Select Industry </option>
                     {% for ind in industry %}
-                        <option>{{ind}}</option>
+                        <option >{{ind}}</option>
                     {% endfor %}
                 </select>
 			</div>
-			<div class="form-group inline">
+			<div class="form-group inline" >
                 <label class="control-label" style="font-size: 18px">Project Nature</label>
-				<select class="form-control ">
+				<select class="form-control " name="ProjectNature">
                   <option>Select Nature </option>
                     {% for project in project %}
                         <option>{{project}}</option>
@@ -28,7 +38,7 @@
 			</div>
 			<div class="form-group">
                 <label class="control-lable " style="font-size: 18px">Skill Required</label>
-				<input type="text" name="skill" class="form-control" id="input" value="Enter Required Skill">
+				<input type="text" name="skill" class="form-control"  id="input" value="Enter Required Skill">
 			</div>
 			<div class="form-group">
                 <label class="control-lable " style="font-size: 18px">Tools and Technolgy Required</label>
@@ -39,7 +49,7 @@
 			<div class="form-group row">
                 <div class="col-sm-2">
                  <h3>
-                    <a href="/create"> &larr; </a>
+                    <a href="#" onclick="javascript:window.history.back(-1);return false;"> &larr; </a>
                 </h3>  
                 </div> 
                 <div class="col-sm-2 pull-right">

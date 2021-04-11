@@ -1,23 +1,30 @@
 {% extends 'layout.html' %}
 {% block title %}Startup{% endblock %}
 {% block content %}
-
+    <!-- {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          var messages = {{ messages | safe }};
+          for (var i=0; i<messages.length; i++) {
+            alert(messages[i]);
+          }
+        </script>
+      {% endif %}
+    {% endwith %} -->
 	<h3 style="text-align: center; color: blue ">You can Continue with your existing  virtual startups</h3>
+   
+    {% for st in startup %}
     <div class="card  text-center" style="font-size: 18px; margin-top: 30px;" >
       <div class="card-body">
-        <h5 class=" card-title">Startup 1 </h5>
-          <a href="/startuppage"><p class="card-text" style="color: blue">ABC Startup</p></a>
+          
+        <h5 class=" card-title">Startup {{loop.index}}  </h5>
+          <a href="{{url_for('startuppage',title=st)}}"><p class="card-text" style="color: blue">{{st}}</p></a>
         
       </div>
     </div>
-    <div class="card  text-center" style="font-size: 18px; margin-top: 30px;" >
-      <div class="card-body">
-        <h5 class=" card-title">Startup 2 </h5>
-         <p class="card-text" style="color: blue">xyz Startup</p>
-        
-      </div>
-
-    </div>
+    
+    {%endfor%}
+      
     <div id="footer" class="container" align="center">
     <h4 ><a style="color: blue" href="/create">Create New Virtual Startup</a></h4>    
    </div>

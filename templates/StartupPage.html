@@ -2,15 +2,16 @@
 {% block title %}Login{% endblock %}
 {% block content %}
     
+<div class="cont">
 
-        <div class="StartupPage" align="center">
+        <div class="StartupPage1" align="center">
             <p>Startup 1 </p>
-            <p id="title">ABC Startup</p>
+            <p id="title">{{title}} Startup</p>
             <p id="subtitle">Tell us which area would you like to look into? </p>
             <div class="config">
                 <div class="flex-item">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio" checked>Manage Project
+                      <input type="radio" name="optradio" >Manage Project
                     </label>
                  </div>   
                 <div class="flex-item">
@@ -26,10 +27,11 @@
             </div>
             <div class="config">
                 <div class="flex-item">
-               
+                    <a href="/hire">
                     <label class="radio-inline">
-                      <input type="radio" name="optradio" checked>Hire a New Team Member
+                      <a href="/hire"><input type="radio" name="optradio" >Hire a New Team Member</a>
                     </label>
+                    </a>
                 </div>
                 <div class="flex-item">
                     <label class="radio-inline">
@@ -43,5 +45,5 @@
                 </div>
             </div>
         </div>
-
+</div>
 {% endblock %}
